@@ -1,0 +1,56 @@
+batch_size: 1
+epochs: 
+
+# Model
+backbone: pvt_small
+decode:
+task_wise: False
+
+image_size: 
+drop: 0.0
+drop_path: 0.1
+
+# Optimizer
+opt: adamw
+opt-eps: !!python/float 1e-8
+opt-betas:
+clip-grad:
+momentum: 0.9
+weight-decay: 0.05
+
+# Schedule
+sched: cosine
+lr: !!python/float 1e-4
+lr-noise:
+lr-noise-pct: 0.67
+lr-noise-std: 1.0
+warmup-lr: !!python/float 1e-6
+min-lr: !!python/float 1e-5
+
+decay-epochs: 30
+warmup-epochs: 5
+cooldown-epochs: 10
+patience-epochs: 10
+decay-rate: 0.1
+
+# Dataset
+data_path:
+data_set: DIM
+test_origin_size: False
+
+# Other
+save_path:
+device: cuda
+seed: 0
+resume:
+start_epoch: 0
+eval: False
+num_workers: 1
+
+save_checkpoint_step: 1
+save_log_step: 1
+
+# Distributed
+dist: False
+world_size: 1
+dist_url: env://
