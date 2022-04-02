@@ -8,6 +8,8 @@ We realse some results of RM-1k in this github.
 
 <img src='t2.png'/>
 
+<img src='t3.png'/>
+
 ***
 
 <center>
